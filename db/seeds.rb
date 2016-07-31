@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+jokes.create({joke: 'Joke #3 -- text block Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aspernatur provident vero eum explicabo accusamus harum accusantium enim sit soluta porro nisi ad tempora dignissimos dicta dolores, reiciendis laborum, eveniet.'})
+
+jokes.create ({joke: 'Joke #2 -- text block Sint temporibus rerum earum nostrum facere, laudantium aperiam quos ducimus repudiandae, fuga quis consectetur. Non.'})
+
+Put.jokes
