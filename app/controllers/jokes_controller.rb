@@ -8,36 +8,31 @@ class JokesController < ApplicationController
 
   end
 
-  def show
+    def show
 
-  end
-
-
-  def create
+    end
 
 
-  end
-
-  def edit
+    def create
 
 
-  end
+    end
 
-  def update
-
-
-  end
+    def edit
 
 
-  def destory
+    end
+
+    def update
 
 
-  end
+    end
 
 
+    def destory
 
 
-
+    end
 
 
 
