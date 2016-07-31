@@ -15,36 +15,53 @@
 //= require_tree .
 
 
+// thanks Joe from Purple Rain for helping with the js
+
 function renderJoke (oneJoke) {
-console.log(oneJoke.joke)
+// console.log(oneJoke.joke)
   let $sampleJoke = oneJoke.joke
   let $joke = $('<h3>').text($sampleJoke)
   var $container = $('#joke-container')
-  // var $joke = $('<li class="joke">' + oneJoke.joke + '</li>')
-
-  // $joke.appendTo($('body'))
-  $container.append($joke)
+  $('#jokes').append($joke)
 
 }
 
 function getJokes(){
-  $.getJSON('/jokes').done(function(jokes) {
+  $.getJSON('/jokesget').done(function(jokes) {
     let oneJoke = jokes.value.shift()
-    // console.log(oneJoke)
-    // oneJoke.forEach(function(joke){
-
+    //fix shift unecessary for one joke
       renderJoke(oneJoke)
 
-    // })
   })
 }
 
 $(function() {
+  console.log('hi there')
   getJokes();
 });
 
 
 
+function createJoke(e){
+    e.preventDefault();
+    console.log('you hit the save')
+    let $cnjoke = $('h3');
+    let data = {
+      joke: $cnjoke.text()
+      // categories: $children.eq(1).val(),
+      }
+
+    $.post('/jokes', data).done ( (response) => {
+    console.log(response);
+    })
+
+  }
+$('#notWorking').click(function() {
+  console.log('go away');
+})
+
+
+$('#theButton').submit(createJoke)
 // function getJokes(){
 //   $.getJSON('/jokes').done(function(jokes) {
 //     let oneJoke = jokes.value.shift()
