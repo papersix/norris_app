@@ -16,22 +16,13 @@ function getJokes(){
   })
 }
 
+
+function emptyContainer(){
+  $('#jokes').empty();
+}
+
 //ouch, create joke????????
 
-function createJoke(e){
-    e.preventDefault();
-    console.log('you hit the save')
-    let $cnjoke = $('h3');
-    let data = {
-      joke: $cnjoke.text()
-      // categories: $children.eq(1).val(),
-      }
-
-    $.post('/jokes', data).done ( (response) => {
-    console.log(response);
-    })
-
-  }
 
 
 // random colors code below modified from from treehouse random background color
@@ -54,6 +45,7 @@ function createJoke(e){
                 $save.css({color: color2});
                 $save.css({backgroundColor: color1});
             }
+
 function saveJoke(e){
     // e.preventDefault();
     console.log('you hit the save')
@@ -90,4 +82,9 @@ $(function() {
     getJokes()
   })
 
+ $('#list').click(function() {
+    emptyContainer()
+    ran_col()
+
+  })
 });
