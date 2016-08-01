@@ -8,9 +8,6 @@ function renderJoke (oneJoke) {
 
 }
 
-
-
-
 function getJokes(){
   $.getJSON('/jokesget').done(function(jokes) {
     let oneJoke = jokes.value.shift()
@@ -57,7 +54,22 @@ function createJoke(e){
                 $save.css({color: color2});
                 $save.css({backgroundColor: color1});
             }
+function saveJoke(e){
+    // e.preventDefault();
+    console.log('you hit the save')
+    let $svjoke = $('h3').text();
+    console.log($svjoke)
+    console.log($svjoke)
+    let data = {
+      joke: $svjoke,
+      categories: 'hello'
+      // categories: $children.eq(1).val(),
+      }
 
+    $.post('/jokes', data).done ( (response) => {
+    console.log(response);
+    })
+}
 // run the random color & jokes
 $(function() {
 
@@ -68,6 +80,12 @@ $(function() {
 
   $('#next').click(function() {
     console.log('hi')
+    ran_col()
+    getJokes()
+  })
+
+  $('#save').click(function() {
+    saveJoke()
     ran_col()
     getJokes()
   })

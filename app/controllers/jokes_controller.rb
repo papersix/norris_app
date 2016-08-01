@@ -5,12 +5,20 @@ class JokesController < ApplicationController
       render :json => jokes
 
     end
+
+    def show
+      joke = Joke.find(params[:id])
+      render :json => joke
+    end
+
+    def create
+      @joke = Joke.create({
+                      :joke => params[:joke],
+                    })
+      render :json => @joke
+    end
 end
 
-    # def create
-
-
-    # end
 
     # def edit
 
@@ -23,9 +31,9 @@ end
     # end
 
 
-    # def destory
+    def destory
 
 
-    # end
+    end
 
 
