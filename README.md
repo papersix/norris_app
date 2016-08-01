@@ -1,24 +1,22 @@
-# README
+# I am with Chuck
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A light hearted application to render random Chuck Norris jokes in colorful palletes. 
 
-Things you may want to cover:
 
-* Ruby version
+#User Stories
 
-* System dependencies
+MVP
 
-* Configuration
+A user should be able to see a random joke displayed in a colorful pallate.
+A user should be able to click on a button to proceed to the next joke.
+A user should be able to save a joke.
 
-* Database creation
+ 
+Later Features
 
-* Database initialization
+A user should be able to see a list of saved jokes.
+A user should be able to delete a joke from the list.
+A user should be able to comment on a joke.
+A user should be able to alternative between nerdy, random, and explicit jokes
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
