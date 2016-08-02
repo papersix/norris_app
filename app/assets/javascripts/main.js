@@ -5,7 +5,6 @@ function renderJoke (oneJoke) {
   let $joke = $('<h3>').text($sampleJoke.replace(/&quot;/g,'"'))
   var $container = $('#joke-container')
   $('#jokes').html($joke)
-
 }
 
 function getJokes(){
@@ -16,10 +15,36 @@ function getJokes(){
   })
 }
 
-
 function emptyContainer(){
   $('#jokes').empty();
 }
+
+function getData(e){
+  emptyContainer();
+  $('#jokes')
+  return $.getJSON('/jokes')
+}
+
+function listJokes(e){
+  getData(e).done(function(data){
+
+    console.log(data)
+    setTimeout(function(){
+      emptyContainer();
+      data.forEach(function(joke){
+
+        appendJoke(joke.joke);
+      })
+    },300)
+  });
+}
+
+function appendJoke(joke){
+  let $joke = $('<li>').addClass('listed').text(joke);
+  $('#jokes').append($joke);
+}
+
+
 
 //ouch, create joke????????
 
@@ -38,12 +63,15 @@ function emptyContainer(){
                 var $bodybg = $('body')
                 var $next = $('#next')
                 var $save = $('#save')
+                var $list = $('#list')
                 $jokescolor.css({color: color1});
                 $bodybg.css({backgroundColor: color2});
                 $next.css({color: color1});
                 $next.css({backgroundColor: color2});
                 $save.css({color: color2});
                 $save.css({backgroundColor: color1});
+                $list.css({color: color1});
+                $list.css({backgroundColor: color2});
             }
 
 function saveJoke(e){
@@ -62,6 +90,20 @@ function saveJoke(e){
     console.log(response);
     })
 }
+
+// function renderList {
+
+// }
+
+
+// function listJokes(e) {
+//   console.log('dead fun')
+//   $.getJSON('/jokes').done(function(jokes) {
+//   renderList(jokes)
+
+//   })
+// }
+
 // run the random color & jokes
 $(function() {
 
@@ -85,6 +127,7 @@ $(function() {
  $('#list').click(function() {
     emptyContainer()
     ran_col()
+    listJokes()
 
   })
 });

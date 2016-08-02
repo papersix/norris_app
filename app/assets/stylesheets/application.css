@@ -53,3 +53,7 @@ box-shadow: none;
   float: right;
 
 }
+
+.listed {
+  font-size: .25em;
+}
