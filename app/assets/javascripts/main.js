@@ -1,4 +1,5 @@
-// thanks Joe from Purple Rain for thinking out the data
+// thanks James & Joe from Purple Rain for thinking out the data flow & helping with listing the items
+
 function renderJoke (oneJoke) {
 // console.log(oneJoke.joke)
   let $sampleJoke = oneJoke.joke
