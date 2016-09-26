@@ -1,4 +1,7 @@
 
+  source 'https://rubygems.org'
+
+
 
 ########
 
@@ -10,10 +13,12 @@ gem 'httparty'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+gem 'sqlite3', group: :development # Added development group.
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'rails_12factor'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

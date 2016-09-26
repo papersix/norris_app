@@ -2,7 +2,7 @@
 
 function renderJoke (oneJoke) {
 // console.log(oneJoke.joke)
-  var $sampleJoke = oneJoke.joke
+  let $sampleJoke = oneJoke.joke
   let $joke = $('<h3>').text($sampleJoke.replace(/&quot;/g,'"'))
   var $container = $('#joke-container')
   $('#jokes').html($joke)
