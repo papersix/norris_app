@@ -28,6 +28,21 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+##https://gist.github.com/thebucknerlife/606a8948daae21fd77fe
+
+  source 'https://rubygems.org'
+
+  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', group: :development # Added development group.
+  gem 'rails_12factor'
+
+  # Use SCSS for stylesheets
+
+########
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
