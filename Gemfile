@@ -1,11 +1,3 @@
-
-  source 'https://rubygems.org'
-
-
-
-########
-
-
 source 'https://rubygems.org'
 
 gem 'httparty'
@@ -13,12 +5,10 @@ gem 'httparty'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
-gem 'sqlite3', group: :development # Added development group.
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'rails_12factor'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -38,10 +28,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-##https://gist.github.com/thebucknerlife/606a8948daae21fd77fe
-
-
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -58,3 +44,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem ruby "2.3.1"
