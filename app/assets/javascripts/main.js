@@ -77,7 +77,7 @@ function appendJoke(joke){
             }
 
 function saveJoke(e){
-    // e.preventDefault();
+
     console.log('you hit the save')
     var $svjoke = $('h3').text();
     console.log($svjoke)
@@ -85,7 +85,7 @@ function saveJoke(e){
     var data = {
       joke: $svjoke,
       categories: 'hello'
-      // categories: $children.eq(1).val(),
+
       }
 
     $.post('/jokes', data).done ( (response) => {
@@ -93,20 +93,7 @@ function saveJoke(e){
     })
 }
 
-// function renderList {
 
-// }
-
-
-// function listJokes(e) {
-//   console.log('dead fun')
-//   $.getJSON('/jokes').done(function(jokes) {
-//   renderList(jokes)
-
-//   })
-// }
-
-// run the random color & jokes
 
 
   console.log('hello hello')
