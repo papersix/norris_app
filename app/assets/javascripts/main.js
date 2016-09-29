@@ -79,10 +79,10 @@ function appendJoke(joke){
 function saveJoke(e){
     // e.preventDefault();
     console.log('you hit the save')
-    let $svjoke = $('h3').text();
+    var $svjoke = $('h3').text();
     console.log($svjoke)
     console.log($svjoke)
-    let data = {
+    var data = {
       joke: $svjoke,
       categories: 'hello'
       // categories: $children.eq(1).val(),
