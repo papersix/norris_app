@@ -1,5 +1,13 @@
+$(function() {
 // thanks James & Joe from Purple Rain for thinking out the data flow & helping with listing the items
 
+function renderJoke (oneJoke) {
+// console.log(oneJoke.joke)
+  let $sampleJoke = oneJoke.joke
+  let $joke = $('<h3>').text($sampleJoke.replace(/&quot;/g,'"'))
+  var $container = $('#joke-container')
+  $('#jokes').html($joke)
+}
 
 function getJokes(){
   $.getJSON('/jokesget').done(function(jokes) {
@@ -85,13 +93,6 @@ function saveJoke(e){
     })
 }
 
-function renderJoke (oneJoke) {
-// console.log(oneJoke.joke)
-  let $sampleJoke = oneJoke.joke
-  let $joke = $('<h3>').text($sampleJoke.replace(/&quot;/g,'"'))
-  var $container = $('#joke-container')
-  $('#jokes').html($joke)
-}
 // function renderList {
 
 // }
@@ -106,7 +107,7 @@ function renderJoke (oneJoke) {
 // }
 
 // run the random color & jokes
-$(function() {
+
 
   console.log('hello hello')
   ran_col();
