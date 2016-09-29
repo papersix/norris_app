@@ -3,15 +3,15 @@ $(function() {
 
 function renderJoke (oneJoke) {
 // console.log(oneJoke.joke)
-  let $sampleJoke = oneJoke.joke
-  let $joke = $('<h3>').text($sampleJoke.replace(/&quot;/g,'"'))
+  var $sampleJoke = oneJoke.joke
+  var $joke = $('<h3>').text($sampleJoke.replace(/&quot;/g,'"'))
   var $container = $('#joke-container')
   $('#jokes').html($joke)
 }
 
 function getJokes(){
   $.getJSON('/jokesget').done(function(jokes) {
-    let oneJoke = jokes.value.shift()
+    var oneJoke = jokes.value.shift()
     renderJoke(oneJoke)
     //fix shift unecessary for one joke - clean up later
   })
@@ -42,7 +42,7 @@ function listJokes(e){
 }
 
 function appendJoke(joke){
-  let $joke = $('<li>').addClass('listed').text(joke);
+  var $joke = $('<li>').addClass('listed').text(joke);
   $('#jokes').append($joke);
 }
 
